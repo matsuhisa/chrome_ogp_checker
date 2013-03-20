@@ -28,7 +28,7 @@ $(function(){
 		var image = new Image();
 		image.src = ogp_image;
 		var width = image.width;
-		$("#ogp_image").append('<img src="' + ogp_image + '" width="200" >');
+		$("#ogp_image").append(ogp_image + '<br><img src="' + ogp_image + '" width="200" >');
 	}else{
 		$("#ogp_image").append("未設定");
 	}
