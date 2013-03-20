@@ -25,6 +25,7 @@ chrome.extension.onConnect.addListener(function(port)
 			ogp_description = msg.ogp_description; 
 			link_canonical  = msg.link_canonical;
 			site_title      = msg.site_title;
+			site_h1         = msg.site_h1;
 			site_keywords   = msg.site_keywords;
 			site_description= msg.site_description;
 		}else{

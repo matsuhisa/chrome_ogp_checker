@@ -8,10 +8,12 @@ $(function(){
 	var ogp_description = bg.ogp_description;
 	var canonical       = bg.link_canonical;
 	var site_title      = bg.site_title;
+	var site_h1         = bg.site_h1;
 	var site_keywords   = bg.site_keywords;
 	var site_description= bg.site_description;
 
 	$("#site_title").append(site_title);
+	$("#site_h1").append(site_h1);
 	$("#site_description").append(site_description);
 	$("#site_keywords").append(site_keywords);
 

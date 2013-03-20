@@ -1,4 +1,3 @@
-
 getPageInformation();
 
 chrome.extension.onRequest.addListener(
@@ -25,8 +24,13 @@ function getPageInformation()
 	var link_canonical   = $("link[rel='canonical']").attr("href");
 
 	var site_title = window.document.title;
-	//var site_h1 = $("h1");
-	//console.log(site_keywords);
+	var site_h1    = '';
+
+	$("h1").each(function(){
+		site_h1 += '<h3>site:h1</h3><p>' + $(this).html() + '</p>';
+		//console.log($(this).html());
+	});
+	console.log(site_h1);
 
 	port.postMessage({
 		ogp_title: ogp_title, 
@@ -34,7 +38,8 @@ function getPageInformation()
 		ogp_image: ogp_image, 
 		ogp_description: ogp_description, 
 		link_canonical: link_canonical, 
-		site_title: site_title, 
+		site_title: site_title,
+		site_h1: site_h1,
 		site_keywords: site_keywords, 
 		site_description: site_description, 
 		status:"start"
