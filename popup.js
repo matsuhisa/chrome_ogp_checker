@@ -14,6 +14,46 @@ $(function(){
 
 	$("#site_title").append(site_title);
 	$("#site_h1").append(site_h1);
+
+	// 文字列を配列にする
+	String.prototype.toArray = function() {
+	    var array = new Array;
+	    for (var i=0 ; i < this.length; i++) {
+	        array.push(this.charAt(i));
+	    }
+	    return array;
+	};
+
+	if(site_description)
+	{
+		var count_1 = 60;
+		var count_2 = 120;
+		var temp_site_description = '';
+		var string_array = site_description.toArray();
+		var start_html   = '<span>'
+		var end_html     = '</span>';
+
+		
+		for(var i=0; i < site_description.length; i++)
+		{
+			if(i==count_1)
+			{
+				temp_site_description += '<span style="color:#999999;">';
+		
+			}else if(i==count_2)
+			{
+		
+				temp_site_description += '</span><span style="color:#e7e7e7;">';
+			}
+			temp_site_description = temp_site_description + string_array[i];
+		}
+		temp_site_description += end_html;
+
+		temp_site_description += '<span style="display:inline-block;color:#ffffff;background-color:#666666;padding:0.4em;">' + site_description.length +"文字</span>";
+		site_description = temp_site_description;
+	}
+
+
 	$("#site_description").append(site_description);
 	$("#site_keywords").append(site_keywords);
 
