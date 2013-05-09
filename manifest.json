@@ -1,6 +1,6 @@
 {
   "name": "OGP_Checkr",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "manifest_version": 2,
   "description": "サイトに設定されているogpなどをチェックして表示します。アイコンは、http://www.smashingmagazine.com/2010/02/15/free-medical-icons-set-60-icons/",
   "background" : {
@@ -9,7 +9,7 @@
 
   "content_scripts": [
     {
-      "matches": ["http://*/*"],
+      "matches": ["http://*/*", "https://*/*"],
       "js": ["jquery.min.js","script.js"],
       "run_at": "document_end"
     }
@@ -20,5 +20,5 @@
     "default_popup": "popup.html"
   },
 
-  "permissions": ["tabs", "http://*/*"]
+  "permissions": ["tabs", "http://*/*", "https://*/*"]
 }
