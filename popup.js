@@ -12,6 +12,12 @@ $(function(){
 	var site_keywords   = bg.site_keywords;
 	var site_description= bg.site_description;
 
+	if(site_title)
+	{
+		site_title_length = '<span style="display:inline-block;color:#ffffff;background-color:#666666;padding:0.4em;">' + site_title.length +"文字</span>";
+		site_title = site_title + site_title_length;
+	}
+
 	$("#site_title").append(site_title);
 	$("#site_h1").append(site_h1);
 
@@ -57,7 +63,11 @@ $(function(){
 	$("#site_description").append(site_description);
 	$("#site_keywords").append(site_keywords);
 
-
+	if(ogp_title)
+	{
+		ogp_title_length = '<span style="display:inline-block;color:#ffffff;background-color:#666666;padding:0.4em;">' + ogp_title.length +"文字</span>";
+		ogp_title = ogp_title + ogp_title_length;
+	}
 	$("#ogp_title").append(ogp_title);
 
 	if(ogp_url){
