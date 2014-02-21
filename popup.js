@@ -11,7 +11,8 @@ $(function(){
 	var site_h1         = bg.site_h1;
 	var site_keywords   = bg.site_keywords;
 	var site_description= bg.site_description;
-
+	var ogp_image_width = bg.ogp_image_width;
+	
 	if(site_title)
 	{
 		site_title_length = '<span style="display:inline-block;color:#ffffff;background-color:#666666;padding:0.4em;">' + site_title.length +"文字</span>";
@@ -79,8 +80,8 @@ $(function(){
 	if(ogp_image){
 		var image = new Image();
 		image.src = ogp_image;
-		var width = image.width;
-		$("#ogp_image").append(ogp_image + '<br><img src="' + ogp_image + '" width="200" >');
+		width = image.naturalWidth;
+		$("#ogp_image").append(ogp_image + '<br><img src="' + ogp_image + '" width="250" >');
 	}else{
 		$("#ogp_image").append("未設定");
 	}

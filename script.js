@@ -23,6 +23,13 @@ function getPageInformation()
 	var site_keywords    = $("meta[name='keywords'], meta[name='Keywords']").attr("content");
 	var link_canonical   = $("link[rel='canonical']").attr("href");
 
+	var ogp_image_width = 0;
+	if(ogp_image){
+		var image = new Image();
+		image.src = "http://hatenacorp.jp/images/hatenaportal/company/interviews/hatena-designer-001.jpg";
+		ogp_image_width= image.width;
+	}
+
 	var site_title = window.document.title;
 	var site_h1    = '';
 
@@ -35,7 +42,8 @@ function getPageInformation()
 	port.postMessage({
 		ogp_title: ogp_title, 
 		ogp_url: ogp_url, 
-		ogp_image: ogp_image, 
+		ogp_image: ogp_image,
+		ogp_image_width: ogp_image_width,
 		ogp_description: ogp_description, 
 		link_canonical: link_canonical, 
 		site_title: site_title,
