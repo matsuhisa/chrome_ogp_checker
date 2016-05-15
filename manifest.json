@@ -1,5 +1,5 @@
 {
-  "name": "OGP_Checkr",
+  "name": "OGP_Checker",
   "version": "0.0.5",
   "manifest_version": 2,
   "description": "サイトに設定されているogpなどをチェックして表示します。アイコンは、http://www.smashingmagazine.com/2010/02/15/free-medical-icons-set-60-icons/",

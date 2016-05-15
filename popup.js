@@ -7,12 +7,14 @@ $(function(){
 	var ogp_image       = bg.ogp_image;
 	var ogp_description = bg.ogp_description;
 	var canonical       = bg.link_canonical;
+	var next            = bg.link_next;
+	var prev            = bg.link_prev;
 	var site_title      = bg.site_title;
 	var site_h1         = bg.site_h1;
 	var site_keywords   = bg.site_keywords;
 	var site_description= bg.site_description;
 	var ogp_image_width = bg.ogp_image_width;
-	
+
 	if(site_title)
 	{
 		site_title_length = '<span style="display:inline-block;color:#ffffff;background-color:#666666;padding:0.4em;">' + site_title.length +"文字</span>";
@@ -40,16 +42,16 @@ $(function(){
 		var start_html   = '<span>'
 		var end_html     = '</span>';
 
-		
+
 		for(var i=0; i < site_description.length; i++)
 		{
 			if(i==count_1)
 			{
 				temp_site_description += '<span style="color:#999999;">';
-		
+
 			}else if(i==count_2)
 			{
-		
+
 				temp_site_description += '</span><span style="color:#e7e7e7;">';
 			}
 			temp_site_description = temp_site_description + string_array[i];
@@ -93,5 +95,16 @@ $(function(){
 	}else{
 		$("#canonical").append("未設定");
 	}
-});
 
+	if(next){
+		$("#next").append('' + next + '');
+	}else{
+		$("#next").append("未設定");
+	}
+
+	if(prev){
+		$("#prev").append('' + prev + '');
+	}else{
+		$("#prev").append("未設定");
+	}
+});
