@@ -37,9 +37,7 @@ function getPageInformation()
 
   $("h1").each(function(){
     site_h1 += '<h3>site:h1</h3><p>' + $(this).html() + '</p>';
-    //console.log($(this).html());
   });
-  //console.log(site_h1);
 
   port.postMessage({
     ogp_title: ogp_title,
@@ -58,7 +56,6 @@ function getPageInformation()
   });
 
   port.onMessage.addListener(function(msg){
-    console.log(msg.status);
     if (msg.status == "loading"){
       port.postMessage({status: "loading"});
     }

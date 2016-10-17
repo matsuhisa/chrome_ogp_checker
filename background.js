@@ -14,7 +14,6 @@ chrome.extension.onConnect.addListener(function(port)
   console.log("background.js");
   port.onMessage.addListener(function(msg){
     if(msg.status == "start"){
-      //console.log("background1");
       ogp_title       = msg.ogp_title;
       ogp_url         = msg.ogp_url;
       ogp_image       = msg.ogp_image;
@@ -26,8 +25,6 @@ chrome.extension.onConnect.addListener(function(port)
       site_h1         = msg.site_h1;
       site_keywords   = msg.site_keywords;
       site_description= msg.site_description;
-    }else{
-      //console.log("background2");
     }
   });
 });
